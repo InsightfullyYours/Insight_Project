@@ -1,0 +1,28 @@
+{% extends "layout_bedplan.html" %}
+{% block title %}Hospital BedPlan Database Details{% endblock %}
+{% block body %}
+
+	<h2>Hospital BedPlan Database Details</h2>
+
+	<p>
+	The Medical Information Mart for Intensive Care-III (<a href=https://mimic.physionet.org/>MIMIC-III Database</a>)
+   is a large, freely-available database comprising de-identified health-related data
+   associated with over forty thousand patients who stayed in care units of
+   the <a href=http://www.bidmc.org/> Beth Israel Deaconess Medical Center</a> between 2001 and 2012.
+	</p>
+
+	<p>
+	The Database includes demographic as well as inpatient and limited outpatient medical care information.
+   This information covers everything from the initial and final diagnoses, to lab procedures and results, to
+   hour-by-hour chart information.  Please see the documentation (linked above) for full details.
+	</p>
+
+    <div style="visibility: hidden">
+        <br><br><br><br><br><br>
+    </div>
+
+	<div class="footer">
+		<a href={{ url_for('BedPlanStart') }}>Try Hospital BedPlan</a><br>
+		<a href={{ url_for('BedPlanPresentation') }}>Introductory Presentation</a>
+	</div>
+{% endblock %}

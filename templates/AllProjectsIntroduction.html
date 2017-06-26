@@ -1,0 +1,45 @@
+{% extends "layout_general.html" %}
+{% block title %}My Projects{% endblock %}
+{% block body %}
+
+	<h2>My Projects</h2>
+
+	<p>
+    Welcome to my project page!  Please select the project you are interested in from the left menu.
+	</p>
+
+    <h2>
+    Project Descriptions:
+	 </h2>
+
+    <h3><a href={{ url_for('CrisisIntroduction') }}>The AIDS Crisis in the U.S.</a></h3>
+
+	<p>
+	The AIDS crisis is one of the first large-scale public health crises to take place during the relative availability of computer computation.
+	The early 1980s saw the release of the Commodore 64, the IBM personal computer, and the Macintosh.  The data that was collected during the
+	crisis was therefore more comprehensive and easily correlated than that in previous crises.  The identification of transmission methods and the
+	identification of the retrovirus that causes AIDS as well as the concurrent development of a diagnostic blood test are all,
+	in many ways, due to the breadth and depth of data available to researchers for the first time.  Many writers, for example, credit the sharing
+	of research data between the American scientist Robert Gallo and the French scientist Luc Montagnier for the breakthrough understanding that
+	AIDS is a retrovirus primarily transmitted through blood and sexual fluids.  The data collected both during and after the AIDS crisis in America
+	is available in anonymized form online from the <a href=https://wonder.cdc.gov/aidspublic.html>CDC WONDER AIDS Database<a>.
+	This project aims to explore the data available from 1981-2002 in order to quantify the devastation wrought by the AIDS crisis.
+	</p>
+
+    <b></b>
+
+    <h3><a href={{ url_for('BedPlanStart') }}>Hospital BedPlan</a></h3>
+
+    <p>
+    Hospital BedPlan is a tool for hospital administrators who would like to more tightly utilize their available beds as well as know how long each patient will stay in the Hospital.  At this time, it focuses
+    on the maternity ward, defined as all patients seen under the auspices of Obstetrics and Newborns in the MIMIC-III database.
+    The <a href=https://mimic.physionet.org/>MIMIC-III Database</a> was mined for inpatient and outpatient data from expectant mothers and newborns and the data were used to train a
+    predictive model whose output is the predicted length of stay.  By pairing this prediction with a scheduling system, hospital administrators
+    can more optimally schedule the ward beds to account for the true length of stay of the patient.  This was my Insight Health Data Science Project.
+    </p>
+
+    <div style="visibility: hidden">
+        <br><br><br><br><br><br>
+    </div>
+
+{% endblock %}

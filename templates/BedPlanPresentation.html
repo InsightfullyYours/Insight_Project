@@ -1,0 +1,30 @@
+{% extends "layout_bedplan.html" %}
+{% block title %}Try Hospital BedPlan{% endblock %}
+{% block body %}
+
+<div class="container">
+
+    <div class="starter-template">
+        <h2>Welcome to Hospital BedPlan</h2>
+        <br>
+        <p>Hospital BedPlan is a hospital scheduling website that uses patient data and scheduled admission date
+        to predict the patient length of stay and optimally schedule the beds.  These predictions can be used to more tightly schedule
+        the maternity ward, increasing the throughput of patients and generating revenue for the hospital.</p>
+        <br>
+        <p>Please enjoy this introductory presentation on Hospital BedPlan.</p>
+        <br>
+     </div>
+
+    <div class = "container">
+        <iframe src="https://docs.google.com/presentation/d/1KzQIOEX1iHTIh0vQa4KR3PjdtkW9pywC5BOH_DhPp00/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    </div>
+
+<div style="visibility: hidden">
+    <br><br><br><br><br><br>
+</div>
+
+<div class="footer">
+		<a href={{ url_for('BedPlanStart') }}>Try Hospital BedPlan</a> <br>
+		<a href={{ url_for('BedPlanDataBase') }}>Database Details</a><br>
+</div>
+{% endblock %}

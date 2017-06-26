@@ -1,0 +1,59 @@
+{% extends "layout_bedplan.html" %}
+{% block title %}Try Hospital BedPlan{% endblock %}
+{% block body %}
+
+<div class="container">
+
+    <div class="starter-template">
+        <h2>You have selected {{ numselect }} patient record(s) from the EMR database.</h2>
+        <br>
+        <h2>You wish to optimize the ward schedule with {{ bedselect }} day(s) between patients for each bed.</h2>
+        <br>
+        <p>To protect patient privacy, only the patient IDs and arrival dates from the simulated EMR system are displayed.</p>
+        <br>
+        <p>Admission information for the selected records is displayed below.</p>
+        <br>
+        <p>If you'd like to reselect the patients, please <a href={{ url_for('BedPlanStart') }} style="padding:3px;cursor:pointer">return to the previous page</a>
+		  and start again.</p>
+    </div>
+
+    <div class = "container">
+
+    <form action={{ url_for('output') }} method="post">
+        <select name=subjectIDs style="visibility: hidden">
+                <option value="{{ Subject_IDs }}">{{ Subject_IDs }} </option>
+        </select>
+        <select name=cushion style="visibility: hidden">
+                <option value="{{ bedselect }}">{{ bedselect }} </option>
+        </select>
+        <p> </p>
+        <br>
+        <input type="submit" value="Click here to predict the discharge date and schedule the ward...">
+    </form>
+    </div>
+    <br>
+
+    <br><br>
+    <table class="table table-hover">
+    <h3>Patient IDs that will be submitted to the model:</h3>
+    <br><br>
+    {% for table in tables %}
+        {{ table|safe }}
+    {% endfor %}
+    </table>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    </div>
+
+  </div>
+
+    <div style="visibility: hidden">
+        <br><br><br><br><br><br><br><br><br><br>
+    </div>
+
+    	<div class="footer">
+    		<a href={{ url_for('BedPlanStart') }}>Start Over</a><br>
+    		<a href={{ url_for('BedPlanDataBase') }}>Database Details</a><br>
+    		<a href={{ url_for('BedPlanPresentation') }}>Introductory Presentation</a>
+    	</div>
+{% endblock %}

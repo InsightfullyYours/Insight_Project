@@ -1,0 +1,46 @@
+{% extends "layout_bedplan.html" %}
+{% block title %}Hospital BedPlan Results{% endblock %}
+{% block body %}
+
+<div class="container">
+    <div class="starter-template">
+        <h2>Predicted Optimal Maternity Ward Schedule:</h2>
+        <h3>Your patient load and bed turnover settings require at least {{ the_result }} bed(s).</h3>
+        <br>
+        <p>Blue indicates the predicted stay for each patient.</p>
+        <p>Yellow is the uncertainty in the estimate.</p>
+        <br>
+        <p>All scheduling was performed with the uncertainty incorporated into the estimated patient stay.</p>
+   </div>
+
+    <figure>
+        <div>
+        {{ fig_div|safe }}
+        {{ fig_script|indent(4)|safe }}
+        {{ js_resources|safe }}
+        {{ css_resources|safe }}
+        </div>
+    </figure>
+
+    <br>
+
+    <div>
+        <table class="table table-hover">
+            <h3>Resulting Schedule:</h3>
+            <br><br>
+            {% for table in tables %}
+                {{ table|safe }}
+            {% endfor %}
+        </table>
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="static/js/bootstrap.min.js"></script>
+    </div>
+
+</div>
+
+<div class="footer">
+		<a href={{ url_for('BedPlanStart') }}>Start Over</a> <br>
+		<a href={{ url_for('BedPlanDataBase') }}>Database Details</a><br>
+		<a href={{ url_for('BedPlanPresentation') }}>Introductory Presentation</a>
+</div>
+{% endblock %}

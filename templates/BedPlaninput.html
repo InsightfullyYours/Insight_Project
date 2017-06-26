@@ -1,0 +1,57 @@
+{% extends "layout_bedplan.html" %}
+{% block title %}Try Hospital BedPlan{% endblock %}
+{% block body %}
+
+<div class="container">
+
+    <div class="starter-template">
+        <h2>Welcome to Hospital BedPlan</h2>
+        <br>
+        <p>Hospital BedPlan is a hospital scheduling website that uses patient data and estimated admission date
+        to predict the patient length of stay and optimally schedule the beds.  At this time, it focuses
+        on the maternity ward, defined as all patients seen under the auspices of Obstetrics and Newborns.  Its predictions can be used to more tightly schedule
+        the maternity ward, increasing the throughput of patients and generating revenue for the hospital.  The predicted length of stay also be used to focus care on high-needs patients.</p>
+        <br>
+        <p>There is an <a href={{ url_for('BedPlanPresentation') }}>introductory presentation</a> available to provide more comprehensive details.</p>
+        <br>
+        <p>This demonstration uses a de-identified Maternity, Obstetrics, and Neonatal ward <a href={{ url_for('BedPlanDataBase') }}>EMR database</a> to demonstrate the capabilities of the system.</p>
+        <br>
+     </div>
+
+    <div class = "container">
+
+    <form action={{ url_for('submit') }} method="post">
+        <h3>Please select the number of patient records from the EMR system to schedule.</h3>
+        <select name=numselect>
+            {% for entry1 in numselections %}
+                <option value="{{ entry1 }}">{{ entry1 }} </option>
+            {% else %}
+                <option>Error!  No values passed in!</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <h3>Please select the desired number of days between patients for each bed.</h3>
+        <select name=bedselect>
+            {% for entry2 in bedselections %}
+                <option value="{{ entry2 }}">{{ entry2 }} </option>
+            {% else %}
+                <option>Error!  No values passed in!</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <input type="submit" value="Select this number of records!">
+    </form>
+    </div>
+
+</div>
+
+<div style="visibility: hidden">
+    <br><br><br><br><br><br>
+</div>
+
+<div class="footer">
+		<a href={{ url_for('BedPlanStart') }}>Start Over</a> <br>
+		<a href={{ url_for('BedPlanDataBase') }}>Database Details</a><br>
+		<a href={{ url_for('BedPlanPresentation') }}>Introductory Presentation</a>
+</div>
+{% endblock %}
