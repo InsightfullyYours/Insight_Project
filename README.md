@@ -10,9 +10,11 @@ Please enjoy.
 
 <br>
 <img src="Schedule.PNG" />
+This figure shows an example output of my Insight Project webapp.  The blue bar is the predicted patient length of stay and the yellow sub-bars are the error in the prediction.  The number of required beds for this subset of patients is on the y-axis.
 <br>
 
 
 <br>
 <img src="AIDSCrisis.png" />
+This figure shows an example image from the AIDS Crisis data analysis project.  It compares the cumulative AIDS diagnoses (blue) per year with the cumulative deaths by 2001.
 <br>
