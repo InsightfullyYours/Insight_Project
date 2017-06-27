@@ -14,7 +14,6 @@ from bokeh.resources import INLINE
 app = Flask(__name__)
 app.config["DEBUG"] = False
 
-app.secret_key = "5kEoTViFR7PoPa3"
 js_resources = INLINE.render_js()
 css_resources = INLINE.render_css()
 
