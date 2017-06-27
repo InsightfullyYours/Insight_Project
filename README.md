@@ -1,4 +1,4 @@
-# InsightProject
+# Insight Project
 
 This is the source code for http://insightfullyyours.pythonanywhere.com/beplanstart, which is hosting my Insight Project, written for the Boston Health Data Science 2017b session, as well as my older 'The AIDS Crisis in the US' project (discussed in the AIDS-Web-App repository).  The Insight Project begins at http://insightfullyyours.pythonanywhere.com/bedplanpresentation and the AIDS Project begins at http://insightfullyyours.pythonanywhere.com/Crisis. 
 
